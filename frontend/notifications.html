@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notifications</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<h1>🔔 Notifications</h1>
+
+<div class="dashboard-grid">
+
+<div class="card">
+<h2>📢 New Seminar</h2>
+<p>AI & Machine Learning Seminar on Friday.</p>
+<button onclick="markRead(this)">
+Mark Read
+</button>
+</div>
+
+<div class="card">
+<h2>📚 Library Update</h2>
+<p>Library timings extended till 10 PM.</p>
+<button onclick="markRead(this)">
+Mark Read
+</button>
+</div>
+
+<div class="card">
+<h2>🏢 Facility Booking</h2>
+<p>Your Seminar Hall booking is approved.</p>
+<button onclick="markRead(this)">
+Mark Read
+</button>
+</div>
+
+<div class="card">
+<h2>🚌 Transport Notice</h2>
+<p>New bus routes added from next week.</p>
+<button onclick="markRead(this)">
+Mark Read
+</button>
+</div>
+
+<div class="card">
+<h2>🎓 Placement Drive</h2>
+<p>Infosys placement registration started.</p>
+<button onclick="markRead(this)">
+Mark Read
+</button>
+</div>
+
+<div class="card">
+<h2>⚠ Emergency Alert</h2>
+<p>Emergency evacuation drill at 4 PM.</p>
+<button onclick="markRead(this)">
+Mark Read
+</button>
+</div>
+
+</div>
+
+<script>
+
+let savedTheme =
+localStorage.getItem("themeColor");
+
+if(savedTheme){
+
+document.documentElement.style
+.setProperty(
+'--main-color',
+savedTheme
+);
+
+}
+
+function markRead(btn){
+
+btn.innerHTML = "✅ Read";
+btn.disabled = true;
+
+alert("Notification Marked As Read");
+
+}
+
+</script>
+
+</body>
+</html>

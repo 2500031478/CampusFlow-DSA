@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<h1>👤 User Profile</h1>
+
+<div class="dashboard-grid">
+
+<div class="card" style="width:500px;height:auto;padding:30px;">
+
+<h2 id="userName">Student Name</h2>
+
+<p><strong>Role:</strong> Student</p>
+
+<p><strong>Email:</strong> student@campusflow.com</p>
+
+<p><strong>Department:</strong> Computer Science</p>
+
+<p><strong>Year:</strong> 3rd Year</p>
+
+<p><strong>Bookings:</strong> 12</p>
+
+<button onclick="editProfile()">
+Edit Profile
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+let savedTheme =
+localStorage.getItem("themeColor");
+
+if(savedTheme){
+
+document.documentElement.style
+.setProperty(
+'--main-color',
+savedTheme
+);
+
+}
+
+let username =
+localStorage.getItem("username");
+
+if(username){
+
+document.getElementById("userName").innerHTML =
+username;
+
+}
+
+function editProfile(){
+
+let newName =
+prompt(
+"Enter New Name",
+document.getElementById("userName").innerHTML
+);
+
+if(newName){
+
+document.getElementById("userName").innerHTML =
+newName;
+
+localStorage.setItem(
+"username",
+newName
+);
+
+alert("Profile Updated Successfully");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

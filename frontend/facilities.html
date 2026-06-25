@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus Facilities</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.7);
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+.popup-content{
+background:rgba(255,255,255,.95);
+color:#4c1d95;
+padding:30px;
+border-radius:15px;
+width:90%;
+max-width:500px;
+text-align:center;
+}
+
+.close-btn{
+background:#8b5cf6;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:10px;
+cursor:pointer;
+margin-top:15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🏢 Campus Facilities</h1>
+
+<div class="dashboard-grid">
+
+<div class="card">
+<h2>💻 Computer Lab</h2>
+<p>Capacity: 120 Students</p>
+<p class="status">Available</p>
+<button onclick="showInfo('Computer Lab','120 Systems Available')">View Details</button>
+</div>
+
+<div class="card">
+<h2>📚 Central Library</h2>
+<p>Capacity: 500 Students</p>
+<p class="status">Open</p>
+<button onclick="showInfo('Central Library','Open from 8 AM to 10 PM')">View Details</button>
+</div>
+
+<div class="card">
+<h2>🎤 Seminar Hall 1</h2>
+<p>Capacity: 300 Students</p>
+<p class="status">Available</p>
+<button onclick="showInfo('Seminar Hall 1','Projector and Audio System Available')">Reserve</button>
+</div>
+
+<div class="card">
+<h2>🎤 Seminar Hall 2</h2>
+<p>Capacity: 250 Students</p>
+<p class="status">Occupied</p>
+<button onclick="showInfo('Seminar Hall 2','Next Slot Available at 4 PM')">Check Schedule</button>
+</div>
+
+<div class="card">
+<h2>🏀 Sports Complex</h2>
+<p>Indoor & Outdoor Facilities</p>
+<p class="status">Open</p>
+<button onclick="showInfo('Sports Complex','Basketball, Cricket, Football, Gym')">View</button>
+</div>
+
+<div class="card">
+<h2>🍽 Food Court</h2>
+<p>Multi Cuisine Dining</p>
+<p class="status">Open</p>
+<button onclick="showInfo('Food Court','South Indian, North Indian & Fast Food')">View</button>
+</div>
+
+<div class="card">
+<h2>🏠 Himalaya Hostel</h2>
+<p>Capacity: 800 Students</p>
+<p class="status">Available</p>
+<button onclick="showInfo('Himalaya Hostel','WiFi, Laundry & Security')">View Details</button>
+</div>
+
+<div class="card">
+<h2>🌸 Lotus Hostel</h2>
+<p>Capacity: 600 Students</p>
+<p class="status">Available</p>
+<button onclick="showInfo('Lotus Hostel','Modern Rooms & Recreation Area')">View Details</button>
+</div>
+
+</div>
+
+<div class="popup" id="popup">
+<div class="popup-content">
+<h2 id="title"></h2>
+<p id="description"></p>
+<button class="close-btn" onclick="closePopup()">Close</button>
+</div>
+</div>
+
+<script>
+
+localStorage.setItem("themeColor","#8b5cf6");
+
+function showInfo(title,description){
+document.getElementById("title").innerHTML=title;
+document.getElementById("description").innerHTML=description;
+document.getElementById("popup").style.display="flex";
+}
+
+function closePopup(){
+document.getElementById("popup").style.display="none";
+}
+
+</script>
+
+</body>
+</html>

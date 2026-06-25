@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<h1>⚙️ Settings</h1>
+
+<div class="dashboard-grid">
+
+<div class="card">
+<h2>🎨 Theme Color</h2>
+
+<select onchange="changeTheme(this.value)">
+<option value="#8b5cf6">Lavender</option>
+<option value="#3b82f6">Blue</option>
+<option value="#ec4899">Pink</option>
+<option value="#f97316">Orange</option>
+<option value="#14b8a6">Teal</option>
+</select>
+
+</div>
+
+<div class="card">
+<h2>🔔 Notifications</h2>
+
+<select>
+<option>Enabled</option>
+<option>Disabled</option>
+</select>
+
+</div>
+
+<div class="card">
+<h2>🌐 Language</h2>
+
+<select>
+<option>English</option>
+<option>Telugu</option>
+<option>Hindi</option>
+</select>
+
+</div>
+
+<div class="card">
+<h2>👤 Account</h2>
+
+<button onclick="editProfile()">
+Edit Profile
+</button>
+
+</div>
+
+<div class="card">
+<h2>🔒 Privacy</h2>
+
+<select>
+<option>Public</option>
+<option>Private</option>
+</select>
+
+</div>
+
+<div class="card">
+<h2>📱 Appearance</h2>
+
+<select>
+<option>Compact View</option>
+<option>Normal View</option>
+</select>
+
+</div>
+
+</div>
+
+<script>
+
+function changeTheme(color){
+
+localStorage.setItem(
+"themeColor",
+color
+);
+
+document.documentElement.style
+.setProperty(
+'--main-color',
+color
+);
+
+alert("Theme Updated Successfully");
+
+}
+
+function editProfile(){
+
+alert("Profile Settings Opened");
+
+}
+
+let savedTheme =
+localStorage.getItem("themeColor");
+
+if(savedTheme){
+
+document.documentElement.style
+.setProperty(
+'--main-color',
+savedTheme
+);
+
+}
+
+</script>
+
+</body>
+</html>

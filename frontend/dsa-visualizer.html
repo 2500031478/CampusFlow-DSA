@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSA Visualizer</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<h1>🌳 DSA Visualizer</h1>
+
+<div class="container">
+
+<div class="card" onclick="showAlgo('BFS')">
+<h2>🕸 BFS</h2>
+<p>Breadth First Search</p>
+</div>
+
+<div class="card" onclick="showAlgo('DFS')">
+<h2>🌐 DFS</h2>
+<p>Depth First Search</p>
+</div>
+
+<div class="card" onclick="showAlgo('Dijkstra')">
+<h2>📍 Dijkstra</h2>
+<p>Shortest Path</p>
+</div>
+
+<div class="card" onclick="showAlgo('Merge Sort')">
+<h2>📊 Merge Sort</h2>
+<p>Sorting Algorithm</p>
+</div>
+
+<div class="card" onclick="showAlgo('Fenwick Tree')">
+<h2>🌲 Fenwick Tree</h2>
+<p>Range Queries</p>
+</div>
+
+<div class="card" onclick="showAlgo('Segment Tree')">
+<h2>🌳 Segment Tree</h2>
+<p>Fast Updates</p>
+</div>
+
+</div>
+
+<div class="result" id="result">
+Click any algorithm card to visualize.
+</div>
+
+<script>
+
+function showAlgo(algo){
+
+document.getElementById("result").innerHTML =
+"<h2>Algorithm Selected</h2><br>" +
+"<b>" + algo + "</b><br><br>" +
+"Visualization Loaded Successfully 🚀";
+
+}
+
+</script>
+
+</body>
+</html>

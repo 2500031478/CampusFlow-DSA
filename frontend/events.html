@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus Events</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+.result-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+max-width:1200px;
+margin:20px auto;
+}
+
+.result-grid .card{
+margin:0;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>🎓 Campus Events & Workshops</h1>
+
+<div class="dashboard-grid">
+
+<div class="card">
+<h2>💻 Hackathon 2026</h2>
+<p>Date: 15 July 2026</p>
+<p>Venue: Auditorium</p>
+<button onclick="registerEvent('Hackathon 2026')">Register</button>
+</div>
+
+<div class="card">
+<h2>🤖 AI Workshop</h2>
+<p>Date: 20 July 2026</p>
+<p>Venue: Seminar Hall 1</p>
+<button onclick="registerEvent('AI Workshop')">Register</button>
+</div>
+
+<div class="card">
+<h2>📊 Data Science Bootcamp</h2>
+<p>Date: 25 July 2026</p>
+<p>Venue: Computer Lab</p>
+<button onclick="registerEvent('Data Science Bootcamp')">Register</button>
+</div>
+
+<div class="card">
+<h2>🎭 Cultural Fest</h2>
+<p>Date: 30 July 2026</p>
+<p>Venue: Open Grounds</p>
+<button onclick="registerEvent('Cultural Fest')">Register</button>
+</div>
+
+<div class="card">
+<h2>🏆 Sports Meet</h2>
+<p>Date: 5 August 2026</p>
+<p>Venue: Sports Complex</p>
+<button onclick="registerEvent('Sports Meet')">Register</button>
+</div>
+
+<div class="card">
+<h2>💼 Placement Drive</h2>
+<p>Date: 10 August 2026</p>
+<p>Venue: Admin Block</p>
+<button onclick="registerEvent('Placement Drive')">Register</button>
+</div>
+
+</div>
+
+<h2 style="text-align:center;margin-top:40px;">
+📌 Registered Events
+</h2>
+
+<div class="result-grid" id="result"></div>
+
+<script>
+
+function registerEvent(eventName){
+
+let regId =
+"EV" + Math.floor(Math.random()*10000);
+
+document.getElementById("result").innerHTML += `
+
+<div class="card">
+
+<h2>✅ Registration Successful</h2>
+
+<p><b>Event:</b> ${eventName}</p>
+
+<p><b>Registration ID:</b> ${regId}</p>
+
+<p>You have successfully registered for the event.</p>
+
+</div>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>

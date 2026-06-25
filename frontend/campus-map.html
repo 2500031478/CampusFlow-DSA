@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus Map</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+.map-wrapper{
+max-width:1300px;
+margin:auto;
+display:grid;
+grid-template-columns:3fr 1fr;
+gap:20px;
+}
+
+.map-area{
+position:relative;
+height:750px;
+background:#ffffff;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+/* Roads */
+
+.road{
+position:absolute;
+background:#cbd5e1;
+border-radius:20px;
+}
+
+.road-top{
+top:120px;
+left:120px;
+width:950px;
+height:18px;
+}
+
+.road-middle{
+top:360px;
+left:120px;
+width:950px;
+height:18px;
+}
+
+.road-bottom{
+top:600px;
+left:120px;
+width:950px;
+height:18px;
+}
+
+.road-left{
+left:220px;
+top:80px;
+width:18px;
+height:560px;
+}
+
+.road-center{
+left:550px;
+top:80px;
+width:18px;
+height:560px;
+}
+
+.road-right{
+left:880px;
+top:80px;
+width:18px;
+height:560px;
+}
+
+/* Buildings */
+
+.building{
+position:absolute;
+background:#8b5cf6;
+color:white;
+padding:14px 18px;
+border-radius:12px;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 5px 15px rgba(139,92,246,.35);
+transition:.3s;
+}
+
+.building:hover{
+transform:scale(1.05);
+}
+
+/* Locations */
+
+.library{
+top:40px;
+left:450px;
+}
+
+.admin{
+top:40px;
+left:850px;
+}
+
+.sblock{
+top:190px;
+left:40px;
+}
+
+.food{
+top:190px;
+left:950px;
+}
+
+.auditorium{
+top:430px;
+left:40px;
+}
+
+.sports{
+top:430px;
+left:930px;
+}
+
+.himalaya{
+top:650px;
+left:300px;
+}
+
+.lotus{
+top:650px;
+left:700px;
+}
+
+/* Details */
+
+.details{
+background:white;
+padding:20px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.details h2{
+color:#5b21b6;
+margin-bottom:15px;
+}
+
+#info{
+background:#f3e8ff;
+padding:20px;
+border-radius:15px;
+min-height:250px;
+}
+
+#info h3{
+color:#5b21b6;
+margin-bottom:10px;
+}
+
+@media(max-width:1000px){
+
+.map-wrapper{
+grid-template-columns:1fr;
+}
+
+.map-area{
+height:850px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🗺️ Campus Map</h1>
+
+<div class="map-wrapper">
+
+<div class="map-area">
+
+<!-- Roads -->
+
+<div class="road road-top"></div>
+<div class="road road-middle"></div>
+<div class="road road-bottom"></div>
+
+<div class="road road-left"></div>
+<div class="road road-center"></div>
+<div class="road road-right"></div>
+
+<!-- Buildings -->
+
+<div class="building library"
+onclick="showInfo('Library','500 Seating Capacity','Open 8AM - 10PM')">
+📚 Library
+</div>
+
+<div class="building admin"
+onclick="showInfo('Admin Block','Administration Office','Student Services')">
+🏢 Admin Block
+</div>
+
+<div class="building sblock"
+onclick="showInfo('S Block','Academic Classrooms','Labs Available')">
+🏫 S Block
+</div>
+
+<div class="building food"
+onclick="showInfo('Food Court','Multi Cuisine Dining','Open 7AM - 9PM')">
+🍽️ Food Court
+</div>
+
+<div class="building auditorium"
+onclick="showInfo('Auditorium','1000 Seating Capacity','Events & Seminars')">
+🎭 Auditorium
+</div>
+
+<div class="building sports"
+onclick="showInfo('Sports Complex','Indoor & Outdoor Sports','Gym Available')">
+🏀 Sports Complex
+</div>
+
+<div class="building himalaya"
+onclick="showInfo('Himalaya Hostel','Boys Hostel','800 Students Capacity')">
+🏠 Himalaya Hostel
+</div>
+
+<div class="building lotus"
+onclick="showInfo('Lotus Hostel','Girls Hostel','600 Students Capacity')">
+🌸 Lotus Hostel
+</div>
+
+</div>
+
+<div class="details">
+
+<h2>📍 Location Details</h2>
+
+<div id="info">
+<h3>Campus Navigation</h3>
+<p>Click any building on the map to view details.</p>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function showInfo(name,info1,info2){
+
+document.getElementById("info").innerHTML = `
+<h3>${name}</h3>
+<p>${info1}</p>
+<br>
+<p>${info2}</p>
+`;
+
+}
+
+</script>
+
+</body>
+</html>

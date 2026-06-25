@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emergency Route</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+.route-box{
+max-width:900px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.emergency-card{
+background:rgba(255,255,255,.15);
+padding:25px;
+border-radius:20px;
+text-align:center;
+backdrop-filter:blur(15px);
+}
+
+.route-result{
+max-width:800px;
+margin:30px auto;
+padding:25px;
+background:rgba(255,255,255,.15);
+border-radius:20px;
+text-align:center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🚨 Emergency Route Finder</h1>
+
+<div class="route-box">
+
+<div class="emergency-card">
+<h2>🔥 Fire Emergency</h2>
+<p>Find nearest safe exit route</p>
+
+<button onclick="showRoute('Fire Exit Route')">
+View Route
+</button>
+</div>
+
+<div class="emergency-card">
+<h2>🏥 Medical Emergency</h2>
+<p>Find nearest medical center</p>
+
+<button onclick="showRoute('Medical Route')">
+View Route
+</button>
+</div>
+
+<div class="emergency-card">
+<h2>⚡ Electrical Hazard</h2>
+<p>Move to safe assembly area</p>
+
+<button onclick="showRoute('Safety Route')">
+View Route
+</button>
+</div>
+
+</div>
+
+<div class="route-result" id="result">
+
+Select an emergency type and click View Route.
+
+</div>
+
+<script>
+
+let savedTheme =
+localStorage.getItem("themeColor");
+
+if(savedTheme){
+
+document.documentElement.style
+.setProperty(
+'--main-color',
+savedTheme
+);
+
+}
+
+function showRoute(type){
+
+let route="";
+
+if(type==="Fire Exit Route"){
+
+route=
+"🚨 S Block → Main Corridor → Open Ground Exit<br><br>Distance: 120m<br>Estimated Time: 2 Minutes";
+
+}
+
+else if(type==="Medical Route"){
+
+route=
+"🏥 Current Location → Admin Block → Medical Center<br><br>Distance: 180m<br>Estimated Time: 3 Minutes";
+
+}
+
+else{
+
+route=
+"⚡ Building Exit → Assembly Point A<br><br>Distance: 150m<br>Estimated Time: 2 Minutes";
+
+}
+
+document.getElementById("result").innerHTML=
+"<h2>"+type+"</h2><br>"+route;
+
+}
+
+</script>
+
+</body>
+</html>

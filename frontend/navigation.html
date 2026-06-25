@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus Navigation</title>
+
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🗺 Campus Route Finder</h1>
+
+<select id="from">
+<option>S Block</option>
+<option>F Block</option>
+<option>E Block</option>
+<option>L Block</option>
+<option>C Block</option>
+<option>M Block</option>
+<option>Library</option>
+<option>Admin Block</option>
+<option>Food Court</option>
+<option>Auditorium</option>
+<option>Himalaya Hostel</option>
+<option>Lotus Hostel</option>
+<option>Kanchenjunga Hostel</option>
+</select>
+
+<select id="to">
+<option>Himalaya Hostel</option>
+<option>Lotus Hostel</option>
+<option>Kanchenjunga Hostel</option>
+<option>Library</option>
+<option>Food Court</option>
+<option>Admin Block</option>
+<option>Auditorium</option>
+<option>S Block</option>
+<option>F Block</option>
+<option>E Block</option>
+<option>L Block</option>
+<option>C Block</option>
+<option>M Block</option>
+</select>
+
+<button onclick="findRoute()">
+Find Shortest Path
+</button>
+
+<div class="result" id="result">
+
+Select locations and click Find Route.
+
+</div>
+
+</div>
+
+<script>
+
+function findRoute(){
+
+let from =
+document.getElementById("from").value;
+
+let to =
+document.getElementById("to").value;
+
+let route = from + " → " + to;
+let distance = "300 meters";
+let time = "4 Minutes";
+
+if(from==="S Block" && to==="Himalaya Hostel"){
+route =
+"S Block → Library → Food Court → Himalaya Hostel";
+distance = "650 meters";
+time = "8 Minutes";
+}
+
+else if(from==="Library" && to==="Admin Block"){
+route =
+"Library → Admin Block";
+distance = "150 meters";
+time = "2 Minutes";
+}
+
+else if(from==="F Block" && to==="Lotus Hostel"){
+route =
+"F Block → Auditorium → Lotus Hostel";
+distance = "500 meters";
+time = "6 Minutes";
+}
+
+else if(from==="C Block" && to==="Food Court"){
+route =
+"C Block → Food Court";
+distance = "200 meters";
+time = "3 Minutes";
+}
+
+document.getElementById("result").innerHTML =
+
+"<h3>✅ Route Found</h3><br>" +
+
+"From: <b>"+from+"</b><br><br>" +
+
+"To: <b>"+to+"</b><br><br>" +
+
+"Shortest Path:<br>" +
+
+route +
+
+"<br><br>" +
+
+"Distance: " + distance + "<br>" +
+
+"Estimated Time: " + time + "<br>" +
+
+"Algorithm Used: Dijkstra";
+
+}
+</script>
+
+</body>
+</html>

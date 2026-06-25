@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seminar Hall Booking</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎤 Seminar Hall Booking</h1>
+
+<select id="hall">
+<option>Seminar Hall 1</option>
+<option>Seminar Hall 2</option>
+<option>Conference Hall</option>
+<option>Main Auditorium</option>
+</select>
+
+<input
+type="text"
+id="event"
+placeholder="Enter Event Name">
+
+<input
+type="date"
+id="date">
+
+<input
+type="time"
+id="time">
+
+<button onclick="bookHall()">
+Book Hall
+</button>
+
+<div class="result" id="result">
+
+Fill the details and click Book Hall.
+
+</div>
+
+</div>
+
+<script>
+
+function bookHall(){
+
+let hall =
+document.getElementById("hall").value;
+
+let event =
+document.getElementById("event").value;
+
+let date =
+document.getElementById("date").value;
+
+let time =
+document.getElementById("time").value;
+
+if(event === "" || date === "" || time === ""){
+
+alert("Please fill all details");
+
+return;
+
+}
+
+document.getElementById("result").innerHTML =
+
+"<h2>✅ Booking Confirmed</h2><br>" +
+
+"<b>Hall:</b> " + hall +
+
+"<br><br>" +
+
+"<b>Event:</b> " + event +
+
+"<br><br>" +
+
+"<b>Date:</b> " + date +
+
+"<br><br>" +
+
+"<b>Time:</b> " + time +
+
+"<br><br>" +
+
+"<b>Status:</b> Approved 🎉";
+
+}
+
+</script>
+
+</body>
+</html>

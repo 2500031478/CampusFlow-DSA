@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus Analytics</title>
+
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<h1>📊 Campus Analytics</h1>
+
+<div class="dashboard-grid">
+
+<div class="card">
+<h2>5000+</h2>
+<p>Students</p>
+</div>
+
+<div class="card">
+<h2>400+</h2>
+<p>Faculty</p>
+</div>
+
+<div class="card">
+<h2>120</h2>
+<p>Facilities</p>
+</div>
+
+<div class="card">
+<h2>95%</h2>
+<p>Campus Utilization</p>
+</div>
+
+</div>
+
+<div class="chart">
+
+<h2 style="text-align:center;margin-bottom:20px;">
+Facility Usage Statistics
+</h2>
+
+<canvas id="usageChart"></canvas>
+
+</div>
+
+<script>
+
+const ctx = document.getElementById('usageChart');
+
+new Chart(ctx, {
+
+type: 'bar',
+
+data: {
+
+labels: [
+'Computer Labs',
+'Library',
+'Seminar Halls',
+'Hostels',
+'Food Court'
+],
+
+datasets: [{
+
+label: 'Usage %',
+
+data: [95,82,70,88,76],
+
+backgroundColor: [
+
+'rgba(139,92,246,0.95)',
+'rgba(139,92,246,0.85)',
+'rgba(139,92,246,0.75)',
+'rgba(139,92,246,0.65)',
+'rgba(139,92,246,0.55)'
+
+],
+
+borderRadius: 10
+
+}]
+
+},
+
+options: {
+
+responsive:true,
+
+plugins:{
+legend:{
+display:false
+}
+},
+
+scales:{
+
+y:{
+beginAtZero:true,
+max:100,
+ticks:{
+color:'#4c1d95'
+}
+},
+
+x:{
+ticks:{
+color:'#4c1d95'
+}
+}
+
+}
+
+}
+
+});
+
+</script>
+
+</body>
+</html>

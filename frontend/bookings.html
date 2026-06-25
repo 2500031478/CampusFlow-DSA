@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CampusFlow Bookings</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+.booking-card{
+max-width:500px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.booking-card label{
+display:block;
+margin-top:15px;
+margin-bottom:5px;
+font-weight:bold;
+color:#5b21b6;
+}
+
+.booking-card select,
+.booking-card input{
+width:100%;
+height:50px;
+padding:10px;
+border:1px solid #ddd;
+border-radius:10px;
+background:white;
+color:#111827;
+}
+
+.result-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+max-width:1200px;
+margin:20px auto;
+}
+
+.result-grid .card{
+margin:0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>📅 Campus Booking System</h1>
+
+<div class="booking-card">
+
+<label>Facility Type</label>
+
+<select id="facility">
+<option>Seminar Hall 1</option>
+<option>Seminar Hall 2</option>
+<option>Computer Lab</option>
+<option>Classroom A101</option>
+<option>Classroom B204</option>
+<option>Conference Room</option>
+</select>
+
+<label>Select Date</label>
+
+<input type="date" id="date">
+
+<label>Select Time Slot</label>
+
+<select id="time">
+<option>09:00 AM - 10:00 AM</option>
+<option>10:00 AM - 11:00 AM</option>
+<option>11:00 AM - 12:00 PM</option>
+<option>02:00 PM - 03:00 PM</option>
+<option>03:00 PM - 04:00 PM</option>
+<option>04:00 PM - 05:00 PM</option>
+</select>
+
+<button onclick="bookFacility()">
+Book Now
+</button>
+
+</div>
+
+<h2 style="text-align:center;margin-top:40px;">
+📌 Booking History
+</h2>
+
+<div class="result-grid" id="result"></div>
+
+<script>
+
+function bookFacility(){
+
+let facility =
+document.getElementById("facility").value;
+
+let date =
+document.getElementById("date").value;
+
+let time =
+document.getElementById("time").value;
+
+let bookingId =
+"CF" + Math.floor(Math.random()*10000);
+
+document.getElementById("result").innerHTML += `
+
+<div class="card">
+
+<h2>✅ Booking Successful</h2>
+
+<p><b>Facility:</b> ${facility}</p>
+
+<p><b>Date:</b> ${date}</p>
+
+<p><b>Time:</b> ${time}</p>
+
+<p><b>Booking ID:</b> ${bookingId}</p>
+
+</div>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>

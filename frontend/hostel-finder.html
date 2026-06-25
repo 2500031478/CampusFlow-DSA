@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hostel Finder</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>🏠 Hostel Finder</h1>
+
+<input type="text"
+id="hostel"
+placeholder="Enter Hostel Name">
+
+<button onclick="searchHostel()">
+Find Hostel
+</button>
+
+<div class="result" id="result">
+Search a hostel...
+</div>
+
+</div>
+
+<script>
+function searchHostel(){
+
+let hostel =
+document.getElementById("hostel").value;
+
+document.getElementById("result").innerHTML=
+"<h2>"+hostel+"</h2><br>"+
+"Rooms Available: 25<br>"+
+"Occupancy: 85%<br>"+
+"Distance From Campus Center: 500m";
+}
+</script>
+
+</body>
+</html>
